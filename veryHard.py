@@ -1,3 +1,5 @@
+from math import gcd
+
 #https://edabit.com/challenge/uPAmqwiHmvwpwoBom
 def convert_to_roman(num):
 	nums = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
@@ -66,3 +68,21 @@ def split(txt):
 def will_hit(equation, position):
 	result = eval(equation.replace('y ', str(position[1]) + ' =').replace('x', '*' + str(position[0])))
 	return result
+
+#https://edabit.com/challenge/6vSZmN66xhMRDX8YT
+def advanced_sort(lst):
+	result = [[i for _ in range(lst.count(i))] for i in list(dict.fromkeys(lst))]
+	return result
+
+#https://edabit.com/challenge/vQgmyjcjMoMu9YGGW
+def simplify(txt):
+	num1, num2 = txt.split('/')
+	gcd_num1_num2 = gcd(int(num1), int(num2))
+	if gcd_num1_num2 == int(num1) and num1 < num2:
+		return int(num2) // int(num2)
+	elif gcd_num1_num2 == int(num2) and num2 < num1:
+		return int(num1) // int(num2)
+	elif gcd_num1_num2 == 1:
+		return txt	
+	else:
+		return f'{int(num1) // gcd_num1_num2}/{int(num2) // gcd_num1_num2}'
