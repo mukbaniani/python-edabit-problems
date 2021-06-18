@@ -107,3 +107,24 @@ def to_boolean_list(word):
 def uncensor(txt, vowels):
 	r = txt.replace('*', '{}')
 	return r.format(*vowels)
+
+#https://edabit.com/challenge/eomsubuQLmwASWbMB
+def weekday_dutch(date):
+	day, month, year = date.split()
+	english_dutch = {0: 'maandag', 1: 'dinsdag', 2:
+	'woensdag', 3: 'donderdag', 4: 'vrijdag',
+	5: "zaterdag", 6: 'zondag'}
+	week_day = datetime(int(year), int(month), int(day)).weekday()
+	return english_dutch.get(week_day)
+
+#https://edabit.com/challenge/pQavNkBbdmvSMmx5x
+def majority_vote(lst):
+	if not lst:
+		return None
+	count_vote = sorted([(lst.count(i),i) for i in sorted(set(lst), key=lst.index)], reverse=True)
+	if len(count_vote) <= 1:
+		return count_vote[0][1]
+	elif count_vote[0][0] != count_vote[1][0]:
+		return count_vote[0][1]
+	else:
+		return None
