@@ -128,3 +128,15 @@ def majority_vote(lst):
 		return count_vote[0][1]
 	else:
 		return None
+
+#https://edabit.com/challenge/g6yjSfTpDkX2STnSX
+def convert_to_hex(txt):
+	result = ''
+	for word in txt:
+		result += hex(ord(word))[2:] + ' '
+	return result
+
+#https://edabit.com/challenge/AdJNWPbfL9LunsNh9
+def multiplication_table(n):
+	lst = [[i * j for i in range(1, n + 1)] for j in range(1, n + 1)]
+	return lst

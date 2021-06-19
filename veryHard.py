@@ -1,4 +1,5 @@
 from math import gcd
+import numpy as np
 
 #https://edabit.com/challenge/uPAmqwiHmvwpwoBom
 def convert_to_roman(num):
@@ -86,3 +87,17 @@ def simplify(txt):
 		return txt	
 	else:
 		return f'{int(num1) // gcd_num1_num2}/{int(num2) // gcd_num1_num2}'
+
+
+#https://edabit.com/challenge/A8gEGRXqMwRWQJvBf
+def tic_tac_toe(board):
+	array_board = np.array(board)
+	array_board_T = array_board.T
+	for i, j in zip(array_board, array_board_T):
+		if len(set(i)) == 1:
+			return i[0]
+		elif len(set(array_board.diagonal())) == 1:
+			return array_board.diagonal()[0]
+		elif len(set(j)) == 1:
+			return j[0]
+	return 'Draw'
