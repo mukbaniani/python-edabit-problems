@@ -101,3 +101,12 @@ def tic_tac_toe(board):
 		elif len(set(j)) == 1:
 			return j[0]
 	return 'Draw'
+
+#https://edabit.com/challenge/S7rdJsn6vkfC9BzcR
+class Employee:
+	def __init__(self, fullname, **kwargs):
+		self.name, self.last_name = fullname.split()
+		self.salary = kwargs.get('salary')
+		self.height = kwargs.get('height')
+		self.nationality = kwargs.get('nationality')
+		self.subordinates = kwargs.get('subordinates')

@@ -140,3 +140,8 @@ def convert_to_hex(txt):
 def multiplication_table(n):
 	lst = [[i * j for i in range(1, n + 1)] for j in range(1, n + 1)]
 	return lst
+
+#https://edabit.com/challenge/8Fwv2f8My4kcNjMZh
+class ones_threes_nines:
+	def __init__(self, num):
+		self.answer = "nines:{}, threes:{}, ones{}".format(num // 9, num % 9 // 3, num % 9 % 3)
