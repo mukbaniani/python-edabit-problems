@@ -1,6 +1,7 @@
 from datetime import datetime
 import re
 import string
+from math import factorial as f
 
 #https://edabit.com/challenge/G9QRtAGXb9Cu368Pw
 def combinations(*items):
@@ -145,3 +146,29 @@ def multiplication_table(n):
 class ones_threes_nines:
 	def __init__(self, num):
 		self.answer = "nines:{}, threes:{}, ones{}".format(num // 9, num % 9 // 3, num % 9 % 3)
+
+
+#https://edabit.com/challenge/PSg77AZJGACk4a7gt
+def meme_sum(a, b):
+	x = str(a)
+	y = str(b)
+	z = len(x) - len(y)
+	q = len(y) - len(x)
+	if z < 0:
+		for i in range(z * -1):
+			print(i)
+			x = "{}{}".format('0', x)
+	elif q < 0:
+		for i in range(q * -1):
+			y = "{}{}".format('0', y)
+	result = ''
+	for i,j in zip(x, y):
+		result += str(int(i) + int(j))
+	return int(result)
+
+#https://edabit.com/challenge/f3jX2BwzAuR8DXsy4
+def fact_of_fact(n):
+	result = 1
+	for i in range(1, n + 1):
+		result *= f(i)
+	return result
