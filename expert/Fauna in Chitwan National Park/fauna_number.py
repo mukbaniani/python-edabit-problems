@@ -1,4 +1,3 @@
-#https://edabit.com/challenge/jecvfH5eyGLrSwzNh
 def fauna_number(txt):
     animals = ["muggercrocodile", "one-hornedrhino", "python", "moth", "monitorlizard", "bengaltiger"]
     lst = txt.replace(',', ' ').replace('.', '').replace("and", "").split()
